@@ -22,39 +22,46 @@
         justify-content: center;
     }
     .xop-left {
-        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(255, 255, 225, 0.10)), url(https://cdnb.artstation.com/p/assets/images/images/006/781/757/large/sanjaya-senarathane-img-20170728-003051.jpg?1501192885);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(164, 222, 102, 0.10)), url(img/bg-img/assess.png);
         background-size: cover;
         background-position: center;
         flex: 1;
         padding: 1rem;
         transition: all .2s ease-in-out;
         text-transform: uppercase;
-        filter: grayscale(80%);
+        filter: grayscale(50%);
     }
 
     .xop-right {
-        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(164, 222, 102, 0.10)), url(http://i.imgur.com/EHjNb0j.jpg);
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(164, 222, 102, 0.10)), url(img/bg-img/invest.jpg);
         background-size: cover;
         background-position: center;
         flex: 1;
         padding: 1rem;
         transition: all .2s ease-in-out;
         text-transform: uppercase;
-        filter: hue-rotate(90deg);
+        filter: grayscale(50%);
     }
+
+
 
     .xop-left:hover,
     .xop-right:hover {
-        transform: scale(0.95);
-        filter: hue-rotate(-90deg);
+        transform: scale(0.99);
+        filter: grayscale(0%);
     }
 
-
-    .xop-container h1 {
+    .xop-right h1 {
         letter-spacing: 2px;
-        font-family: 'Francois One', sans-serif;
-        font-size: 3rem;
-        font-family: '微軟正黑體' ;
+        font-size: 6rem;
+        text-shadow: black 0.1em 0.1em 0.2em
+        /* font-family: '微軟正黑體' ; */
+    }
+    .xop-left h1 {
+        letter-spacing: 2px;
+        font-size: 6rem;
+        text-shadow: black 0.1em 0.1em 0.2em
+        /* font-family: '微軟正黑體' ; */
     }
 
     .xop-button {
@@ -68,7 +75,7 @@
         text-decoration: none;
         letter-spacing: 1px;
         display: inline-block;
-        font-size: 1rem;
+        font-size: 2.5rem;
         cursor: pointer;
         transition: all 0.5s;
         width: 150px;

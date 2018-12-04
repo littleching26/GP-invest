@@ -1,0 +1,72 @@
+html,body
+{
+    height: 100%;
+    
+}
+body {
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(255, 255, 225, 0.10));
+}
+
+#titleProfolio {
+    text-align: left ;
+    color: #fff;
+    font-size: 3vmin ;
+    -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+    animation: 3s ease 0s normal forwards 1 fadein;
+}
+
+.riskResultTitle {
+    font-size: 4vmin ;
+    height: 15% ;
+    color: #FAF0E6;
+    margin-top: 50%;
+    border-right: solid 1px #FAF0E6 ;
+    -webkit-animation: 1s ease 0s normal forwards 1 fadein;
+    animation: 1s ease 0s normal forwards 1 fadein;
+}
+.riskResultContent {
+    color: #FAF0E6;
+    font-size: 7vmin ;
+    border-right: solid 1px #FAF0E6 ;
+    -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+    animation: 2s ease 0s normal forwards 1 fadein;
+}
+.firstProfolio, .secondProfolio, .thirdProfolio {
+    display: none ;
+}
+.fa-search-plus:hover, .fa-search-minus:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+    filter: hue-rotate(-90deg);
+}
+
+
+
+.firstBlock {
+    -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+    animation: 3s ease 0s normal forwards 1 fadein;
+}
+
+.secondBlock {
+    -webkit-animation: 4s ease 0s normal forwards 1 fadein;
+    animation: 4s ease 0s normal forwards 1 fadein;
+}
+
+.thirdBlock {
+    -webkit-animation: 5s ease 0s normal forwards 1 fadein;
+    animation: 5s ease 0s normal forwards 1 fadein;
+}
+
+@keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:1; }
+}

@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='invest.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/invest.js') }}"></script>
+
+<div class="row" style="height:100%;font-family: 微軟正黑體;">
+    <div class="col-md-4 riskResult">
+        <div class="riskResultTitle">你的風險等級結果是</div>
+        <div class="riskResultContent">低風險！</div>
+    </div>
+    <div class="col-md-8">
+        <div class="container" style="margin-top: 20%; margin-left: 5%;">
+            <div id="titleProfolio">以下為您提供適當的基金</div>
+            <div class="panel-group">
+                <div class="panel panel-default firstBlock">
+                    <div class="panel-heading">富邦中國ETF傘型基金
+                        <i id="firstDetail" class="fas fa-search-plus" style="float: right;"></i>
+                    </div>
+                    <div class="panel-body">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 75%"></div>
+                            <p>75%</p>
+                        </div>
+                        <div id="firstName" class="firstProfolio">
+                            <div>Hahago + 台積 + 玉山</div>
+                            <div>經理公司應確保基金投資之安全，以誠信原則及專業經營方式，追蹤上証 180 兩倍槓桿指數之績效表現為本子基金投資組合管理之目標，將運用本 基金於中華民國與國外投資有價證券及從事證券相關商品交易，本子基金原則上透過每日重新帄衡機制(Daily
+                                Rebalancing)，以使本子基 金投資組合之整體曝險，能貼近本子基金淨資產價值之正向兩倍之百分 之一百。為因應標的指數之正向倍數表現之複製策略所需，從事證券相 關商品交易曝險部位，應以每營業日持有期貨、選擇權之契約總市值或
+                                總(名目)價值之合計數，不超過本子基金淨
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-success secondBlock">
+                    <div class="panel-heading">日盛投信
+                        <i id="secondDetail" class="fas fa-search-plus" style="float: right;"></i>
+                    </div>
+                    <div class="panel-body">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 90%"></div>
+                            <p>90%</p>
+                        </div>
+                        <div id="secondName" class="secondProfolio">
+                            <div>Hahago + 台積 + 玉山</div>
+                            <div>經理公司應確保基金投資之安全，以誠信原則及專業經營方式，追蹤上証 180 兩倍槓桿指數之績效表現為本子基金投資組合管理之目標，將運用本 基金於中華民國與國外投資有價證券及從事證券相關商品交易，本子基金原則上透過每日重新帄衡機制(Daily
+                                Rebalancing)，以使本子基 金投資組合之整體曝險，能貼近本子基金淨資產價值之正向兩倍之百分 之一百。為因應標的指數之正向倍數表現之複製策略所需，從事證券相 關商品交易曝險部位，應以每營業日持有期貨、選擇權之契約總市值或
+                                總(名目)價值之合計數，不超過本子基金淨
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-warning thirdBlock">
+                    <div class="panel-heading">未來資產投信
+                        <i id="thirdDetail" class="fas fa-search-plus" style="float: right;"></i>
+                    </div>
+                    <div class="panel-body">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 40%"></div>
+                            <p>40%</p>
+                        </div>
+                        <div id="thirdName" class="thirdProfolio">
+                            <div>Hahago + 台積 + 玉山</div>
+                            <div>經理公司應確保基金投資之安全，以誠信原則及專業經營方式，追蹤上証 180 兩倍槓桿指數之績效表現為本子基金投資組合管理之目標，將運用本 基金於中華民國與國外投資有價證券及從事證券相關商品交易，本子基金原則上透過每日重新帄衡機制(Daily
+                                Rebalancing)，以使本子基 金投資組合之整體曝險，能貼近本子基金淨資產價值之正向兩倍之百分 之一百。為因應標的指數之正向倍數表現之複製策略所需，從事證券相 關商品交易曝險部位，應以每營業日持有期貨、選擇權之契約總市值或
+                                總(名目)價值之合計數，不超過本子基金淨
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

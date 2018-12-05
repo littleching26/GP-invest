@@ -263,3 +263,47 @@
         line-height: 1.5em;
         margin: 0px;
     }
+    
+    
+    p {
+        font-size: 2vmin;
+    }
+  
+  .rb {
+    padding: 16px 0;
+    text-align: center;
+    /* background: rgba(0,0,0,0.3); */
+    border-radius: .3em;
+  }
+  
+  .rb-tab {
+    display: inline-block;
+    position: relative;
+    width: 24%;
+  }
+  .rb-spot div {
+      display: inline-block;
+      position: relative;
+      font-size: 2.5vmin;
+      text-align: left ;
+      width: 100%;
+  }
+  .titleNum{
+    font-size: 2.5vmin;
+  }
+  .rb-spot {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    background: transparent;
+    /* border: 2px solid rgba(0,0,0,.3); */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: ease .5s;
+  }
+  
+  .rb-tab-active .rb-spot {
+    /* background: rgba(0,0,0,.35); */
+    border: 2px solid rgba(243,49,128,.6);
+  }
+  

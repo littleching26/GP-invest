@@ -165,9 +165,11 @@ img {
   .section-heading.white h2 {
     color: #fff; }
   .section-heading.style-2 p {
-    font-size: 16px; }
+    font-size: 30px;
+    font-family: '微軟正黑體'}
   .section-heading.style-2 h2 {
-    font-size: 30px; }
+    font-size: 50px;
+    font-family: '微軟正黑體' ; }
     @media only screen and (max-width: 767px) {
       .section-heading.style-2 h2 {
         font-size: 24px; } }
@@ -456,8 +458,8 @@ img {
           font-weight: 300;
           font-size: 2vmin;
           cursor: pointer;
-          line-height: 1; 
-          letter-spacing: 0.25vmin; 
+          line-height: 1;
+          letter-spacing: 0.25vmin;
         }
           .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a:hover, .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a:focus {
             color: rgba(255, 255, 255, 0.7); }
@@ -1682,4 +1684,25 @@ img {
     font-size: 16px; }
   .single-web-icon:hover {
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15); }
+
+
+    .Conceptshow {
+        color: #FAF0E6;
+        font-size: 7vmin ;
+        border-right: solid 1px #FAF0E6 ;
+        -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+        animation: 2s ease 0s normal forwards 1 fadein;
+    }
+
+    @keyframes fadein{
+        0% { opacity:0; }
+        66% { opacity:0; }
+        100% { opacity:1; }
+    }
+
+    @-webkit-keyframes fadein{
+        0% { opacity:0; }
+        66% { opacity:0; }
+        100% { opacity:1; }
+    }
 /* ====== The End ====== */

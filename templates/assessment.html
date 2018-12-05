@@ -1,43 +1,94 @@
 {% extends "base.html" %} {% block content %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assessment.css') }}">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <section class="xop-container">
     <div class="xop-left text-position">
         <article>
-            <h1>風險評估</h1><div class="xop-button" data-toggle="modal" data-target="#myModal">GO!</div>
+            <h1>風險評估</h1>
+            <div class="xop-button" data-toggle="modal" data-target="#myModal">GO!</div>
         </article>
     </div>
     <div class="xop-right text-position">
         <article>
-            <h1>Invest</h1><div class="xop-button" onclick="redirect()">GO!</div>
+            <h1>直接投資</h1>
+            <div class="xop-button" onclick="redirect()">GO!</div>
         </article>
     </div>
 </section>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title" id="myModalLabel">風險評估表單</div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body">
-                The body of the modal, where you can show a message in single or multi-line. Even include a video. <br />                For
-                example, embed a youtube video! OR <br /> Add some picture.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn btn-info" data-dismiss="modal">OK</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+<div id="modalQuestion"></div>
 <script>
-    function redirect(){
+    function redirect() {
         window.location.href = 'invest'
     }
-</script>
-{% endblock %}
+    // $('#question1').on('change', function () {
+    //     alert($('input[name=options]:checked', '#question1').val());
+    // });
+    // $('#question2').on('change', function () {
+    //     alert($('input[name=options]:checked', '#question2').val());
+    // });
+    $(document).ready(function(){
+        var readQuestion = '';
+        var xmlhttp = new XMLHttpRequest();
+        var questionArr=new Array();
+        xmlhttp.overrideMimeType("text/html;charset=utf8"); 
+        xmlhttp.onreadystatechange = function(){
+            if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
+                readQuestion = xmlhttp.responseText;
+                questionArr=readQuestion.split("\r\n");
+                fieldFormHtml(questionArr) ;
+            }
+        };
+        xmlhttp.open("GET","./static/test.txt",true);
+        xmlhttp.send();
+        
+        // var formHtml = '';
+        // var question = '<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"\
+        // aria-hidden="true"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header">\
+        //     <div class="modal-title" id="myModalLabel">風險評估表單</div><button type="button" class="close" data-dismiss="modal"\
+        //     aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body" id="questionContent">'
+        // for(var i = 0; i<questionArr.length; i ++ ){
+        //     var tmpArr = new Array();
+        //     tmpArr = questionArr[i].split(' ');
+        //     console.log(tmpArr) ;
+        //     for(var j = 0; j< questionArr[i].length; j++){
+        //         formHtml += '<form><div class="col-lg-3"><label class="btn btn-primary"><input type="radio" name="options" value="A">'+tmpArr[j]+
+        //                     '</label></div><div class="col-lg-3"><label class="btn btn-primary"><input type="radio" name="options" value="B">'+tmpArr[j]+
+        //                     '</label></div><div class="col-lg-3"><label class="btn btn-primary"><input type="radio" name="options" value="C">'+tmpArr[j]+
+        //                     '</label></div><div class="col-lg-3"><label class="btn btn-primary"><input type="radio" name="options" value="D">'+tmpArr[j]+
+        //                     '</label></div></form><br><br>'
+        //     }
+        // }
+        // question = question + formHtml + '</div><div class="modal-footer"><button type="button" class="btn btn btn-info" data-dismiss="modal"\
+        //      onclick="submit()">提交</button><button type="button" class="btn btn-danger" data-dismiss="modal">取消</button></div></div></div></div>'
+    });
+
+    function fieldFormHtml(questionArr){
+        var formHtml = '';
+        var question = '<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"\
+        aria-hidden="true"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header">\
+            <div class="modal-title" id="myModalLabel">風險評估表單</div><button type="button" class="close" data-dismiss="modal"\
+            aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body" id="questionContent">'
+        for(var i = 0; i<questionArr.length; i ++ ){
+            var tmpArr = new Array();
+            tmpArr = questionArr[i].split(' ');
+            formHtml += '<form><div class="col-lg-3"><label class="btn btn-primary"><input type="radio" name="options" value="A">'+tmpArr[0]+
+                        '</label></div><div class="col-lg-3"><label class="btn btn-primary"><input type="radio" name="options" value="B">'+tmpArr[1]+
+                        '</label></div><div class="col-lg-3"><label class="btn btn-primary"><input type="radio" name="options" value="C">'+tmpArr[2]+
+                        '</label></div><div class="col-lg-3"><label class="btn btn-primary"><input type="radio" name="options" value="D">'+tmpArr[3]+
+                        '</label></div></form><br><br>'
+        }
+        question = question + formHtml + '</div><div class="modal-footer"><button type="button" class="btn btn btn-info" data-dismiss="modal"\
+             onclick="submit()">提交</button><button type="button" class="btn btn-danger" data-dismiss="modal">取消</button></div></div></div></div>';
+        $('#modalQuestion').html(question);
+    }
+    function submit() {
+        console.log($('input[name=options]:checked')[0].value)
+    }
+</script> {% endblock %}

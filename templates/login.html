@@ -2,8 +2,8 @@
 <!-- ##### Breadcumb Area Start ##### -->
 <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(static/img/bg-img/breadcumb3.jpg);">
     <div class="bradcumbContent">
-        <p>Let's Join To GP-Invest</p>
-        <h2>Login</h2>
+        <div>Let's Join To GP-Invest</div>
+        <div style="font-size: 4vmin;">Login</div>
     </div>
 </section>
 <!-- ##### Breadcumb Area End ##### -->
@@ -14,15 +14,15 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <div class="login-content">
-                    <h3>登入填寫風險屬性表單</h3>
+                    <div style="font-size: 2.5vmin;">登入填寫風險屬性表單</div>
                     <!-- Login Form -->
                     <div class="login-form">
-                        <form action="#" method="post">
+                        <form method="post">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail">
-                                <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never
-                                    share your email with anyone else.</small>
+                                <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never
+                                    share your email with anyone else.</small> -->
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
@@ -37,4 +37,10 @@
     </div>
 </section>
 <!-- ##### Login Area End ##### -->
+<!-- 
+<script>
+$('form').submit(function(event){
+        console.log(event);
+    })
+</script> -->
 {% endblock %}

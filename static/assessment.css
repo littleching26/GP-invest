@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Francois+One|Play');
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC';}
+    
     html,
     body,
     section {
@@ -22,7 +28,7 @@
         justify-content: center;
     }
     .xop-left {
-        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(255, 255, 225, 0.10)), url(https://cdnb.artstation.com/p/assets/images/images/006/781/757/large/sanjaya-senarathane-img-20170728-003051.jpg?1501192885);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(164, 222, 102, 0.10)), url(img/bg-img/assess.png);
         background-size: cover;
         background-position: center;
         flex: 1;
@@ -33,50 +39,82 @@
     }
 
     .xop-right {
-        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(164, 222, 102, 0.10)), url(http://i.imgur.com/EHjNb0j.jpg);
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(164, 222, 102, 0.10)), url(img/bg-img/invest.jpg);
         background-size: cover;
         background-position: center;
         flex: 1;
         padding: 1rem;
         transition: all .2s ease-in-out;
         text-transform: uppercase;
-        filter: hue-rotate(90deg);
+        filter: grayscale(80%);
     }
+
+
 
     .xop-left:hover,
     .xop-right:hover {
-        transform: scale(0.95);
-        filter: hue-rotate(-90deg);
+        transform: scale(0.99);
+        filter: grayscale(0%);
     }
 
-
-    .xop-container h1 {
-        letter-spacing: 2px;
-        font-family: 'Francois One', sans-serif;
-        font-size: 3rem;
-        font-family: '微軟正黑體' ;
+    .xop-right h1 {
+        letter-spacing: 5px;
+        font-size: 5rem;
+        -webkit-text-stroke: 0.5px black;
+        color: white;
+        text-shadow:
+            3px 3px 0 #000,
+          -1px -1px 0 #000,
+           1px -1px 0 #000,
+           -1px 1px 0 #000,
+            1px 1px 0 #000;
+        /* text-shadow: black 0.2em 0.2em 0.8em */
+        /* font-family: '微軟正黑體' ; */
+    }
+    .xop-left h1 {
+        letter-spacing: 5px;
+        font-size: 5rem;
+        -webkit-text-stroke: 0.5px black;
+        color: white;
+        text-shadow:
+            3px 3px 0 #000,
+          -1px -1px 0 #000,
+           1px -1px 0 #000,
+           -1px 1px 0 #000,
+            1px 1px 0 #000;
+        /* text-shadow: black 0.1em 0.1em 0.8em */
+        /* font-family: '微軟正黑體' ; */
     }
 
     .xop-button {
+        text-align: center;
         border-radius: 2px;
         color: #fff;
         background-color: #333;
         padding: 10px 6px;
         margin: 0 1%;
         text-align: center;
-        font-family: 'Play', sans-serif;
+        font-family: 'Play';
         text-decoration: none;
         letter-spacing: 1px;
         display: inline-block;
-        font-size: 1rem;
+        font-size: 3rem;
         cursor: pointer;
         transition: all 0.5s;
-        width: 150px;
+        width: 400px;
+        -webkit-text-stroke: 0.5px black;
+        color: white;
+        text-shadow:
+            3px 3px 0 #000,
+          -1px -1px 0 #000,
+           1px -1px 0 #000,
+           -1px 1px 0 #000,
+            1px 1px 0 #000;
     }
 
     .xop-button:hover {
-        background: #fff;
-        color: #333;
+        background-color:rgba(0, 0, 0, 0.8);
+        color: #fff;
     }
 
     @media only screen and (max-width: 600px) {
@@ -97,3 +135,175 @@
         font-size: 2vmin ;
         color: #333 ;
     }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .quiz {
+        width: 746px;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+
+    .question:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .question h1 {
+        text-align: center;
+        background: #7FD863;
+        font-size: 50px;
+        font-weight: bold;
+        padding: 10px 0px;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        color: #FFF;
+        text-shadow: 2px 2px 2px #000;
+
+    }
+
+
+    .answers {
+        margin-left: -15px;
+    }
+
+    .answer {
+        width: 365px;
+        min-height: 150px;
+        float: left;
+        background: #DDD;
+        margin: 0px 0px 10px 15px;
+        color: #FFF;
+        box-shadow: 1px 1px 1px #AAA;
+    }
+
+    .answer:hover {
+        background: #EEE;
+    }
+
+    .answer.selected {
+        background: rgb(255, 255, 112);
+    }
+
+    .answer .wrapper {
+        margin: 20px;
+    }
+
+    .answer .wrapper .table {
+        display: table;
+        width: 100%;
+    }
+
+    .answer .text {
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+        box-shadow: 1px 1px 1px #AAA;
+        font-weight: 900;
+        text-align: center;
+        background: #7FD863;
+        height: 90px;
+        font-size: 29px;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .answer .checkbox {
+        height: 20px;
+        width: 20px;
+        background: #FFF;
+        float: right;
+        margin: 0px 20px 10px 0px;
+        box-shadow: 1px 1px 2px #000;
+        position: relative;
+    }
+
+    .answer.selected .checkbox:before {
+        color: #000;
+        font-size: 40px;
+        content: "\2713\0020";
+        position: absolute;
+        top: -15px;
+        left: -5px;
+    }
+
+    .result {
+        display: none;
+    }
+
+    .result.selected {
+        display: block;
+    }
+
+    .result .wrapper {
+        padding: 50px;
+        border: 1px solid #AAA;
+    }
+
+    .result .wrapper:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .result .title {
+        margin-bottom: 20px;
+    }
+
+    .result .mainImage {
+        float: left;
+        margin-right: 30px;
+    }
+
+    .result p {
+        line-height: 1.5em;
+        margin: 0px;
+    }
+    
+    
+    p {
+        font-size: 2vmin;
+    }
+  
+  .rb {
+    padding: 16px 0;
+    text-align: center;
+    /* background: rgba(0,0,0,0.3); */
+    border-radius: .3em;
+  }
+  
+  .rb-tab {
+    display: inline-block;
+    position: relative;
+    width: 24%;
+  }
+  .rb-spot div {
+      display: inline-block;
+      position: relative;
+      font-size: 2.5vmin;
+      text-align: left ;
+      width: 100%;
+  }
+  .titleNum{
+    font-size: 2.5vmin;
+  }
+  .rb-spot {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    background: transparent;
+    /* border: 2px solid rgba(0,0,0,.3); */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: ease .5s;
+  }
+  
+  .rb-tab-active .rb-spot {
+    /* background: rgba(0,0,0,.35); */
+    border: 2px solid rgba(243,49,128,.6);
+  }
+  

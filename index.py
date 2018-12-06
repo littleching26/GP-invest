@@ -3,6 +3,7 @@
 from flask import Flask, render_template
 # from pymongo import MongoClient
 from flask import jsonify
+from pymongo import MongoClient
 import json
 app = Flask(__name__)
 
@@ -29,18 +30,18 @@ def history():
 # def logined_main_page(email):
 #     return render_template("index.html",email=email)
 
-# @app.route('/get_user/<email>')
-# def login(email):
-#     uri = "mongodb://LICHING:justtheway402@ds163013.mlab.com:63013/crowd_investing"
-#     client = MongoClient(uri)
-#     db = client['crowd_investing']
-#     collect = db['user_info']
-#     registered = collect.find_one({'email':email})
-#     if (registered == None) :
-#         collect.insert_one({'email':email})
-#         return 'inserted'
-#     else:
-#         return 'existed'
+@app.route('/get_user/<email>')
+def get_user(email):
+    uri = "mongodb://LICHING:justtheway402@ds225624.mlab.com:25624/gp_invest"
+    client = MongoClient(uri)
+    db = client['gp_invest']
+    collect = db['user_info']
+    registered = collect.find_one({'email':email})
+    if (registered == None) :
+        collect.insert_one({'email':email})
+        return 'inserted'
+    else:
+        return 'existed'
 
 if __name__ == "__main__":
     app.run(debug=True)

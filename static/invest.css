@@ -12,19 +12,20 @@ html,body
     animation: 3s ease 0s normal forwards 1 fadein;
 }
 
+.profolio{
+    -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+    animation: 3s ease 0s normal forwards 1 fadein;
+}
+
 .riskResultTitle {
     font-size: 4vmin ;
-    height: 15% ;
-    color: #FAF0E6;
-    margin-top: 50%;
-    border-right: solid 1px #FAF0E6 ;
+    color: rgba(0,0,0,0.7);
     -webkit-animation: 1s ease 0s normal forwards 1 fadein;
     animation: 1s ease 0s normal forwards 1 fadein;
 }
 .riskResultContent {
-    color: #FAF0E6;
-    font-size: 7vmin ;
-    border-right: solid 1px #FAF0E6 ;
+    color: rgba(0,0,0,0.7);
+    font-size: 5vmin ;
     -webkit-animation: 2s ease 0s normal forwards 1 fadein;
     animation: 2s ease 0s normal forwards 1 fadein;
 }
@@ -275,8 +276,7 @@ html,body
         /* Bootstrap Progress */
     .progress {
         border-radius: 3px;
-        height: 8px; 
-    }
+        height: 3vmin;     }
         .progress .progress-bar {
         border-radius: 3px; }
         .progress.progress-sm {

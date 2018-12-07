@@ -48,10 +48,6 @@ $(document).ready(function () {
             $('#brandLogo').attr('src',"../static/img/core-img/logo.png");
         }
     });
-    // $( "#firstProfolio" ).progressbar({
-    //     value: 37
-    // });
-
     function progress(percent, $element) {
         var widthProgress = $('.progress').width() ;
         var progressBarWidth = percent * widthProgress / 100;
@@ -60,17 +56,6 @@ $(document).ready(function () {
     progress(80, $('#firstProfolio'));
     progress(100, $('#secondProfolio'));
     progress(45, $('#thirdProfolio'));
-    // var element = document.getElementById("firstProfolio");   
-    // var width = 1;
-    // var id = setInterval(frame, 40);
-    // function frame() {
-    //     if (width >= 100) {
-    //     clearInterval(id);
-    //     } else {
-    //     width++; 
-    //     element.style.width = width + '%'; 
-    //     }
-    // }
 });
 
 

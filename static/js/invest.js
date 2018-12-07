@@ -32,4 +32,18 @@ $(document).ready(function () {
             });
         }
     });
-})
+    $('.bannerWord').css('color','black');
+    $('#loginBtn').css('color','black');
+    $(window).scroll(function(){
+        var scrollTop = $(this).scrollTop();
+        if(scrollTop<=0){
+            console.log('test');
+            $('.bannerWord').css('color','black');
+            $('#loginBtn').css('color','black');
+        }else{
+            $('.bannerWord').css('color','#ffffff');
+            $('#loginBtn').css('color','#ffffff');
+        }
+    })
+});
+

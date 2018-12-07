@@ -1,4 +1,4 @@
-# v1.0 README
+# v2.0 this version improves the invest page
 
 # gp_invest
 a website about Bank of Shanghai Fintech Competition in 2018

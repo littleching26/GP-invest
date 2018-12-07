@@ -34,15 +34,18 @@ $(document).ready(function () {
     });
     $('.bannerWord').css('color','black');
     $('#loginBtn').css('color','black');
+    $('#brandLogo').attr("src","../static/img/core-img/logo_black.png");
     $(window).scroll(function(){
         var scrollTop = $(this).scrollTop();
         if(scrollTop<=0){
             console.log('test');
             $('.bannerWord').css('color','black');
             $('#loginBtn').css('color','black');
+            $('#brandLogo').attr("src","../static/img/core-img/logo_black.png");
         }else{
             $('.bannerWord').css('color','#ffffff');
             $('#loginBtn').css('color','#ffffff');
+            $('#brandLogo').attr('src',"../static/img/core-img/logo.png");
         }
     });
     // $( "#firstProfolio" ).progressbar({

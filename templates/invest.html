@@ -1,9 +1,8 @@
 {% extends "base.html" %} {% block content %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='invest.css') }}">
-
-<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
-  <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -41,6 +40,10 @@
                                         <tr>
                                             <td>
                                                 富達基金-全球債券基金(A類股份-美元)
+                                                <i id="firstDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div id="firstName" style="display: none;">
+                                                    <br>風險等級：RR2
+                                                    <br>基金介紹：主要投資於全球高信評政府債與投資級公司債，投資報酬主要來自於殖利率曲線定位、資產配置、產業配置與精選債券標的。基金經理人擁有彈性可投資對比指數以外的標的。</div>
                                             </td>
                                             <td>
                                                 <div class="progress">
@@ -51,6 +54,11 @@
                                         <tr>
                                             <td>
                                                 聯博-全球債券基金AT級別美元(基金之配息來源可能為本金)
+                                                <i id="secondDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div id="secondName" style="display: none;">
+                                                    <br>風險等級：RR2
+                                                    <br>基金介紹：本基金投資於全球政府及企業在已開發市場所發行的投資級固定收益證券，以取得高額之總投資報酬。本基金持有的非美元計價債券，大部分均以美元避險，從而將匯率波動風險減至最低。投資經理善用其內部的信用分析資源，外部的財務及經濟資訊來評量固定收益證券的投資價值。
+                                                </div>
                                             </td>
                                             <td>
                                                 <div class="progress">
@@ -61,6 +69,11 @@
                                         <tr>
                                             <td>
                                                 野村全球短期收益基金-新臺幣計價
+                                                <i id="thirdDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div id="thirdName" style="display: none;">
+                                                    <br>風險等級：RR2
+                                                    <br>基金介紹：以相對穩健的投資方式參與全球市場經濟成長:本基金的主要投資區域為全球市場，由於已開發國家與新興國家的經濟成長不一，全球央行貨幣政策亦有所分歧，本基金以價格波動相對較低的全球投資等級短期債券為主要投資標的，分散投資已開發國家與新興國家債券以提升投資組合安全性，故在追求收益的同時將控制風險，以相對穩健的投資方式參與全球債券市場的獲利機會。
+                                                </div>
                                             </td>
                                             <td>
                                                 <div class="progress">

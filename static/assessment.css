@@ -59,8 +59,9 @@
 
     .xop-right h1 {
         letter-spacing: 5px;
-        font-size: 5rem;
+        font-size: 3rem;
         -webkit-text-stroke: 0.5px black;
+        font-family: 'Noto Sans TC';
         color: white;
         text-shadow:
             3px 3px 0 #000,
@@ -68,12 +69,11 @@
            1px -1px 0 #000,
            -1px 1px 0 #000,
             1px 1px 0 #000;
-        /* text-shadow: black 0.2em 0.2em 0.8em */
-        /* font-family: '微軟正黑體' ; */
     }
     .xop-left h1 {
+        font-family: 'Noto Sans TC';
         letter-spacing: 5px;
-        font-size: 5rem;
+        font-size: 3rem;
         -webkit-text-stroke: 0.5px black;
         color: white;
         text-shadow:
@@ -82,8 +82,6 @@
            1px -1px 0 #000,
            -1px 1px 0 #000,
             1px 1px 0 #000;
-        /* text-shadow: black 0.1em 0.1em 0.8em */
-        /* font-family: '微軟正黑體' ; */
     }
 
     .xop-button {
@@ -98,7 +96,7 @@
         text-decoration: none;
         letter-spacing: 1px;
         display: inline-block;
-        font-size: 3rem;
+        font-size: 1.8rem;
         cursor: pointer;
         transition: all 0.5s;
         width: 400px;
@@ -123,9 +121,18 @@
         }
 
     }
-    .modal-content {
+    /* .modal-content {
         font-family: '微軟正黑體' ;
+    } */
+
+    #pageNum {
+        color: #333;
     }
+
+    #part {
+        color: #333;
+    }
+
     .modal-title {
         font-size: 2.5vmin ;
         color: #333 ;
@@ -312,4 +319,16 @@
   }
   .qtitle{
     text-align: left;
+  }
+
+  .partIIcontent {
+      cursor: pointer;
+      border-radius: 50%;
+      width: fit-content;
+      margin: auto;
+  }
+
+  .partIIcontent-active{
+    border: 2px solid rgba(243,49,128,.6);
+    transition: ease .5s;
   }

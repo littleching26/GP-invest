@@ -51,7 +51,9 @@ $(document).ready(function () {
     function progress(percent, $element) {
         var widthProgress = $('.progress').width() ;
         var progressBarWidth = percent * widthProgress / 100;
-        $element.animate({ width: progressBarWidth }, 3000).html(percent + "% ");
+        var revenue = percent*25000 ;
+        var revenueDigital = revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        $element.animate({ width: progressBarWidth }, 3000).html("$"+revenueDigital+"　　"　+ percent + "%");
     }
     progress(80, $('#firstProfolio'));
     progress(100, $('#secondProfolio'));

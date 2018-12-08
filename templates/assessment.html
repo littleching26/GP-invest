@@ -1,12 +1,12 @@
 {% extends "base.html" %} {% block content %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-    crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous"> -->
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assessment.css') }}">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">--> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
 
 <section class="xop-container">
     <div class="xop-left text-position">
@@ -52,7 +52,7 @@
     var D_num = 0;
 
     function redirect() {
-        window.location.href = 'invest';
+        window.location.href = 'directInvest';
     }
     function runFieldContent() {
         var xmlhttp = new XMLHttpRequest();
@@ -93,21 +93,37 @@
                 case 'C':
                     C_num += 1;
                     break;
-                default:
+                case 'D':
                     D_num += 1;
                     break;
             }
         }
     }
-    $("#nextQuestion").click(function () {
-        if ($("#nextQuestion").text() == '提交') {
-            countABCD();
-            console.log(A_num, B_num, C_num, D_num);
+    function personalityType(A_num, B_num, C_num, D_num){
+        var maxValue = A_num;
+        var type = '影響型';
+        if(B_num>maxValue){
+            type = '支配型';
+        }else if(C_num>maxValue){
+            type = '分析型';
+        }else{
+            type = '穩健型';
+        }
+        return type;
+    }
 
-        } else {
+    $("#nextQuestion").click(function () {
+        countABCD();
+        if ($("#nextQuestion").text() == 'Done') {
+            window.location.href = 'invest' ;
+        } else if($("#nextQuestion").text() == 'Go To The Next Part') {
             pageNum++;
-            // $("#pageNum").text(pageNum + '/6') ;
-            countABCD();
+            runFieldContent();
+            console.log(A_num, B_num, C_num, D_num);
+            var personType = personalityType(A_num, B_num, C_num, D_num) ;
+            console.log(personType) ;
+        }else{
+            pageNum++;
             runFieldContent();
         }
     });
@@ -132,6 +148,18 @@
                 $(this).addClass("rb-tab-active");
             }
         });
+        $(".partIIcontent").click(function () {
+            if ($(this).attr("data-value") != undefined) {
+                if((count-25) == 3){
+                    // console.log($(this).attr("data-value"));
+                    $(this).addClass("partIIcontent-active");
+                }else{
+                    // console.log($(this).attr("data-value"));
+                    $(this).parent().find(".partIIcontent").removeClass("partIIcontent-active");
+                    $(this).addClass("partIIcontent-active");
+                }
+            }
+        });
     };
     function fieldFormHtml(questionArr) {
         $('#questionContent').html('');
@@ -153,8 +181,12 @@
             $('#part').text('Part II 風險屬性分析');
             var tmpArr = new Array();
             tmpArr = questionArr[(count-25)].split(' ');
-            formHtml += '<div id="rb-' + count.toString() + '><div class="qtitle">'+ (count-24).toString()+'　　'+tmpArr[0] +'</div><br><div>'+ tmpArr[1] +'</div><br>\
-                <div>'+ tmpArr[2] +'</div><br><div>'+ tmpArr[3] +'</div><br><div>'+ tmpArr[4] +'</div><br><div>'+ tmpArr[5] +'</div><br></div>';
+            formHtml += '<div id="rb-' + count.toString() + '><div class="qtitle">'+ (count-24).toString()+'　　'+tmpArr[0] +'</div><br>\
+                <div class="partIIcontent"data-value="A">'+ tmpArr[1] +'</div><br>\
+                <div class="partIIcontent" data-value="B">'+ tmpArr[2] +'</div><br>\
+                <div class="partIIcontent" data-value="C">'+ tmpArr[3] +'</div><br>\
+                <div class="partIIcontent" data-value="D">'+ tmpArr[4] +'</div><br>\
+                <div class="partIIcontent" data-value="E">'+ tmpArr[5] +'</div><br></div>';
             count ++;
             $('#pageNum').text(pageNum + '/12');
             $('#nextQuestion').text('Next');
@@ -163,6 +195,9 @@
             $('#nextQuestion').text('Go To The Next Part');
             pageNum = 0;
             // $('#nextQuestion').attr("data-dismiss", "modal");
+        }
+        if(count == 37){
+            $('#nextQuestion').text('Done');
         }
         $('#questionContent').html(formHtml);
     }

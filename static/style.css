@@ -328,6 +328,7 @@ img {
 
 /* :: 3.8.0 oneMusic Button */
 .oneMusic-btn {
+  font-family: 'Noto Sans TC';
   background-color: #fff;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
@@ -347,6 +348,7 @@ img {
   .oneMusic-btn i {
     margin-left: 5px; }
   .oneMusic-btn:hover, .oneMusic-btn:focus {
+    font-family: 'Noto Sans TC';
     font-size: 16px;
     font-weight: 700;
     background-color: #000000;
@@ -385,8 +387,8 @@ img {
           height: 70px; } }
       .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a {
         font-family: 'Noto Sans TC';
+        margin-top: 2%;
         margin-left: 5vmin ;
-        margin-bottom: 0;
         font-weight: 300;
         text-transform: capitalize;
         color: #ffffff;
@@ -456,7 +458,8 @@ img {
           font-family: 'Noto Sans TC' ;
           -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
-          margin-bottom: 0;
+          margin-top: 0%;
+          /* margin-bottom: 0; */
           color: #fff;
           font-weight: 300;
           font-size: 2vmin;

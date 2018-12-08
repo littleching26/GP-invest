@@ -1,0 +1,193 @@
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='directInvest.css') }}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/directInvest.js') }}"></script>
+
+<div class="container-scroller">
+    <div class="main-panel" style="width:100%;">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card dir_profolio" style="text-align:center;margin-top:5%;">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped" style="table-layout: fixed;">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                基金
+                                            </th>
+                                            <th>
+                                                資金募集百分比
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="text-align: left;">
+                                        <tr>
+                                            <td>
+                                                <i id="firstDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div style="width: 93%;">富達基金-全球債券基金(A類股份-美元)
+                                                    <div id="firstName" style="display: none;">
+                                                        <br>風險等級：RR2
+                                                        <br>基金介紹：主要投資於全球高信評政府債與投資級公司債，投資報酬主要來自於殖利率曲線定位、資產配置、產業配置與精選債券標的。基金經理人擁有彈性可投資對比指數以外的標的。
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-success" id="firstProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i id="secondDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div style="width: 93%;">2.　聯博-全球債券基金AT級別美元(基金之配息來源可能為本金)
+                                                    <div id="secondName" style="display: none;">
+                                                        <br>風險等級：RR2
+                                                        <br>基金介紹：本基金投資於全球政府及企業在已開發市場所發行的投資級固定收益證券，以取得高額之總投資報酬。本基金持有的非美元計價債券，大部分均以美元避險，從而將匯率波動風險減至最低。投資經理善用其內部的信用分析資源，外部的財務及經濟資訊來評量固定收益證券的投資價值。
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-warning" id="secondProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i id="thirdDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div style="width: 93%;">3.　野村全球短期收益基金-新臺幣計價
+                                                    <div id="thirdName" style="display: none;">
+                                                        <br>風險等級：RR2
+                                                        <br>基金介紹：以相對穩健的投資方式參與全球市場經濟成長:本基金的主要投資區域為全球市場，由於已開發國家與新興國家的經濟成長不一，全球央行貨幣政策亦有所分歧，本基金以價格波動相對較低的全球投資等級短期債券為主要投資標的，分散投資已開發國家與新興國家債券以提升投資組合安全性，故在追求收益的同時將控制風險，以相對穩健的投資方式參與全球債券市場的獲利機會。
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-primary" id="thirdProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i id="fourthDetail" style="float: right; font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div style="width: 93%;">4.　聯博-全球高收益債券基金A2級別美元(本基金主要係投資於非投資等級之高風險債券且配息來源可能為本金)
+                                                    <div id="fourthName" style="display: none;">
+                                                        <br>風險等級：RR3
+                                                        <br>基金介紹：本基金投資於世界各地機構發行的高收益債券，包括美國及新興國家，以追求高度的經常性收入及資本增值潛力。本基金投資於以美元及非美元計價的證券。本投資組合由聯博的全球固定收益及高收益研究團隊進行投資管理。
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-danger" id="fourthProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i id="fifthDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div style="width: 93%;">5.　安聯收益成長基金-AT累積類股(美元)(本基金有相當比重投資於非投資等級之高風險債券
+                                                    <div id="fifthName" style="display: none;">
+                                                        <br>風險等級：RR3
+                                                        <br>基金介紹：本基金以提供投資人長期資本增值和收益為投資目標，為達其投資目標，主要投資於普通股票及其他證券、債券及可轉債。本基金至少有80%之資產投資於註冊在美國與加拿大之企業所發行或擔保付款之普通股票及其他證券、債券及可轉債。基金最多得將70%資產投資於股票；最多70%之資產投資於高收益債；最多70%之資產投資於可轉換債券及附認股權證之債券。
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-warning" id="fifthProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i id="sixthDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div style="width: 93%;">6.　摩根基金-亞太入息基金(美元)(每月派息)(本基金之配息來源可能為本金)
+                                                    <div id="sixthName" style="display: none;">
+                                                        <br>風險等級：RR3
+                                                        <br>基金介紹：主要投資於亞太地區(不包含日本)收益證券提供收益及長期資本成長，指標指數為50%摩根士丹利資本國際亞太不含日本指數(總報酬淨額)/50%JP摩根亞洲信用指數(總報酬總額)
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-info" id="sixthProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i id="seventhDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div style="width: 93%;">7.　富蘭克林坦伯頓新興國家固定收益(本基金主要係投資於非投資等級之高風險債券且本基金之配息政策可能致配息來源為本金)
+                                                    <div id="seventhName" style="display: none;">
+                                                        <br>風險等級：RR3
+                                                        <br>基金介紹：本基金的首要目標為尋求高水平的經常性收益，次目標為資產增值，但須在符合首要投資目標下始實行。本基金主要透過投資於包含眾多已發行固定入息由美國或非美國發行機構所發出的債務證券，以獲取高息及避免過多風險。本基金的一般投資對象，包括如屬美國發行者，則為附有投資等級或評為較低等級的固定入息債務證券，而非美國發行或未被評級者，亦為其同類型的投資項目。
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-success" id="seventhProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i id="eighthDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+                                                <div style="width: 93%;">8.　貝萊德環球資產配置基金(本基金有相當比重投資於非投資等級之高風險債券且本基金之配息政策可能致配息來源為本金)
+                                                    <div id="eighthName" style="display: none;">
+                                                        <br>風險等級：RR3
+                                                        <br>基金介紹：以盡量提高總回報為目標。基金將不少於70％的資產投資於全球各地公司和政府╱機關所發行的股 票、債券（包括非投資級*）及短期證券。
+                                                        本基金最多可將其資產的100％投資於股票；及最多100％投資於定息工具及貨幣市場工具。本基金亦 可投資於財困證券及新興市場（例如巴西、南非及南韓）。本基金採取全面管理的投資政策，隨著市場變化及經濟走勢，不時就證券及市場種類而更改美國及外
+                                                        國股本證券、債務及貨幣市場證券的組合。基金在決定投資於股票或債券之時，將參照若干因素，例如 資本增值的相對機會、收回資本的風險、不同到期日的債務證券的孳息率及利率水平。
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-danger" id="eighthProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i id="ninthDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
+
+                                                <div style="width: 93%;">9.　施羅德環球基金系列-新興亞洲(美元)A1-累積
+                                                    <div id="ninthName" style="display: none;">
+                                                        <br>風險等級：RR3
+                                                        <br>基金介紹：以盡量提高總回報為目標。基金將不少於70％的資產投資於全球各地公司和政府╱機關所發行的股 票、債券（包括非投資級*）及短期證券。
+                                                        本基金最多可將其資產的100％投資於股票；及最多100％投資於定息工具及貨幣市場工具。本基金亦 可投資於財困證券及新興市場（例如巴西、南非及南韓）。本基金採取全面管理的投資政策，隨著市場變化及經濟走勢，不時就證券及市場種類而更改美國及外
+                                                        國股本證券、債務及貨幣市場證券的組合。基金在決定投資於股票或債券之時，將參照若干因素，例如 資本增值的相對機會、收回資本的風險、不同到期日的債務證券的孳息率及利率水平。
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-primary" id="ninthProfolio"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

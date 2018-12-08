@@ -26,6 +26,10 @@ def login():
 @app.route('/history')
 def history():
     return render_template("history.html")
+
+@app.route('/directInvest')
+def directInvest():
+    return render_template("directInvest.html")
 # @app.route('/<email>')
 # def logined_main_page(email):
 #     return render_template("index.html",email=email)

@@ -1,68 +1,78 @@
-{% extends "base.html" %}
-{% block content %}
-    <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area">
-        <div class="hero-slides owl-carousel">
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide d-flex align-items-center justify-content-center">
-                <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(static/img/bg-img/bg-1.jpg);"></div>
-                <!-- Slide Content -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-slides-content text-center">
-                                <h6 data-animation="fadeInUp" data-delay="100ms">Invest with a Smart Group</h6>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">GP-Invest <span>GP-Invest</span></h2>
-                                <a data-animation="fadeInUp" data-delay="500ms" href="#about" class="nav-link js-scroll-trigger btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide d-flex align-items-center justify-content-center">
-                <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(static/img/bg-img/bg-2.jpg);"></div>
-                <!-- Slide Content -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-slides-content text-center">
-                                <h6 data-animation="fadeInUp" data-delay="100ms">Concept From NCTU</h6>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Group-Investment<span>Group-Investment</span></h2>
-                                <a data-animation="fadeInUp" data-delay="500ms" href="#about" class="nav-link js-scroll-trigger btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
-                            </div>
+{% extends "base.html" %} {% block content %}
+<!-- ##### Hero Area Start ##### -->
+<section class="hero-area">
+    <div class="hero-slides owl-carousel">
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(static/img/bg-img/bg-1.jpg);"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">Invest with a Smart Group</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">GP-Invest
+                                <span>GP-Invest</span>
+                            </h2>
+                            <a data-animation="fadeInUp" data-delay="500ms" href="#about" class="nav-link js-scroll-trigger btn oneMusic-btn mt-50">Discover
+                                <i class="fa fa-angle-double-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ##### Hero Area End ##### -->
 
-    <!-- ##### Latest Albums Area Start ##### -->
-    <section class="latest-albums-area section-padding-100" id="about">
-
-        <div class="container" style="height: 100%;">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading style-2">
-                        <h2>系統概念</h2>
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(static/img/bg-img/bg-2.jpg);"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">Concept From NCTU</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">Group-Investment
+                                <span>Group-Investment</span>
+                            </h2>
+                            <a data-animation="fadeInUp" data-delay="500ms" href="#about" class="nav-link js-scroll-trigger btn oneMusic-btn mt-50">Discover
+                                <i class="fa fa-angle-double-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-9">
+        </div>
+    </div>
+</section>
+<!-- ##### Hero Area End ##### -->
+
+<!-- ##### Latest Albums Area Start ##### -->
+<section class="latest-albums-area section-padding-100" id="about">
+
+    <div class="container" style="height: 100%;">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading style-2">
+                    <h2>系統概念</h2>
                 </div>
             </div>
-            <div class="Conceptshow">
-                <img src="static/img/bg-img/introduction.PNG">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
             </div>
         </div>
-    </section>
-    <!-- ##### Latest Albums Area End ##### -->
+        <div class="Conceptshow">
+            <img src="static/img/bg-img/introduction.PNG">
+        </div>
+        <div style="width: 100%; text-align: center;margin-bottom: 0%;">
+            <a data-delay="500ms" href="assessment" class="btn oneMusic-btn">風險評估</a>
+        </div>
+    </div>
+</section>
+<!-- ##### Latest Albums Area End ##### -->
 
 
 {% endblock %}

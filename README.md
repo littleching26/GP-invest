@@ -1,4 +1,14 @@
-# v2.0 this version improves the invest page
+# v3.0 介面完善
+
+1. 增加直接投資頁面
+2. 只有填完表格才會到評估風險的頁面
+3. 修正banner 對齊問題
+4. 新增表格評估人格功能
+
+---------------------------------
+待處理：
+1. 登入/註冊功能
+2. 首頁流程圖
 
 # gp_invest
 a website about Bank of Shanghai Fintech Competition in 2018

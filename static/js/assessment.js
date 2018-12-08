@@ -50,6 +50,7 @@ function runFieldContent() {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
             readQuestion = xmlhttp.responseText;
+            console.log(readQuestion) ;
             questionArr = readQuestion.split("\r\n");
             fieldFormHtml(questionArr);
             detectFormClick();
@@ -117,10 +118,8 @@ function detectFormClick() {
     });
 };
 function fieldFormHtml(questionArr) {
-    console.log(questionArr);
     $('#questionContent').html('');
     var formHtml = '<div class="rb-box">';
-    console.log(count);
     if (count < 25) {
         for (var i = count; i < count + 5; i++) {
             console.log(i) ;

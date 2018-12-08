@@ -49,7 +49,7 @@ function runFieldContent() {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
             readQuestion = xmlhttp.responseText;
-            questionArr = readQuestion.split("\r\n");
+            questionArr = readQuestion.split("\n");
             fieldFormHtml(questionArr);
             detectFormClick();
         }

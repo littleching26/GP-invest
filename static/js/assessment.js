@@ -123,6 +123,7 @@ function fieldFormHtml(questionArr) {
     console.log(count);
     if (count < 25) {
         for (var i = count; i < count + 5; i++) {
+            console.log(i) ;
             var tmpArr = new Array();
             var strArr = questionArr[i];
             console.log(strArr);

@@ -33,6 +33,8 @@ $(document).ready(function () {
         }
     });
     $('.bannerWord').css('color','black');
+    $('.bannerWord').css('background-color','transparent');
+    $('.classy-menu').css('background-color','transparent');
     $('#loginBtn').css('color','black');
     $('#brandLogo').attr("src","../static/img/core-img/logo_black.png");
     $(window).scroll(function(){
@@ -42,10 +44,14 @@ $(document).ready(function () {
             $('.bannerWord').css('color','black');
             $('#loginBtn').css('color','black');
             $('#brandLogo').attr("src","../static/img/core-img/logo_black.png");
+            $('.bannerWord').css('background-color','transparent');
+            $('.classy-menu').css('background-color','transparent');
         }else{
             $('.bannerWord').css('color','#ffffff');
             $('#loginBtn').css('color','#ffffff');
             $('#brandLogo').attr('src',"../static/img/core-img/logo.png");
+            $('.bannerWord').css('background-color','black');
+            $('.classy-menu').css('background-color','black');
         }
     });
     function progress(percent, $element) {

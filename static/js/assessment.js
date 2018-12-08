@@ -45,12 +45,10 @@ function runFieldContent() {
     var xmlhttp = new XMLHttpRequest();
     var readQuestion = '';
     var questionArr = new Array();
-    var questionArr = new Array();
     xmlhttp.overrideMimeType("text/html;charset=utf8");
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
             readQuestion = xmlhttp.responseText;
-            console.log(readQuestion) ;
             questionArr = readQuestion.split("\r\n");
             fieldFormHtml(questionArr);
             detectFormClick();
@@ -118,6 +116,7 @@ function detectFormClick() {
     });
 };
 function fieldFormHtml(questionArr) {
+    console.log(questionArr) ;
     $('#questionContent').html('');
     var formHtml = '<div class="rb-box">';
     if (count < 25) {

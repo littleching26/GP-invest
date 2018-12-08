@@ -5,6 +5,9 @@ var B_num = 0;
 var C_num = 0;
 var D_num = 0;
 $(document).ready(function () {
+    $('#riskAssessment').click(function () {
+        runFieldContent();
+    })
     $('#myModal').on('hidden.bs.modal', function () {
         count = 0;
         pageNum = 1;

@@ -180,7 +180,8 @@
         }else{
             $('#part').text('Part II 風險屬性分析');
             var tmpArr = new Array();
-            tmpArr = questionArr[(count-25)].split(' ');
+            var strArr = questionArr[(count-25)]
+            tmpArr = strArr.split(' ');
             formHtml += '<div id="rb-' + count.toString() + '><div class="qtitle">'+ (count-24).toString()+'　　'+tmpArr[0] +'</div><br>\
                 <div class="partIIcontent"data-value="A">'+ tmpArr[1] +'</div><br>\
                 <div class="partIIcontent" data-value="B">'+ tmpArr[2] +'</div><br>\

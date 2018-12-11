@@ -3,8 +3,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
 <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/invest.js') }}"></script>
 
@@ -17,7 +15,7 @@
                         <div class="card-body">
                             <div class="riskResultTitle">你的風險等級結果是</div>
                             <br>
-                            <div class="riskResultContent">低風險！</div>
+                            <div class="riskResultContent">低風險 保守型！</div>
                         </div>
                     </div>
                 </div>
@@ -39,12 +37,14 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <button class="btn btn-cus"  data-toggle="modal" data-target="#myModal">募資</button>　富達基金-全球債券基金(A類股份-美元)
+                                                <button class="btn btn-cus"  data-toggle="modal" data-target="#myModal">投資</button>　富達基金-全球債券基金(A類股份-美元)
                                                 <i id="firstDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
                                                 <div id="firstName" style="display: none;">
                                                     <br>風險等級：RR2
-                                                    <br>基金介紹：主要投資於全球高信評政府債與投資級公司債，投資報酬主要來自於殖利率曲線定位、資產配置、產業配置與精選債券標的。基金經理人擁有彈性可投資對比指數以外的標的。</div>
-                                            </td>
+                                                    <br>基金介紹：主要投資於全球高信評政府債與投資級公司債，投資報酬主要來自於殖利率曲線定位、資產配置、產業配置與精選債券標的。基金經理人擁有彈性可投資對比指數以外的標的。
+                                                    <br>截止日期：2019/1/15
+                                                    <br>投資門檻金額：$6,000
+                                                </td>
                                             <td>
                                                 <div class="progress">
                                                     <div class="progress-bar" id="firstProfolio"></div>
@@ -53,11 +53,13 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <button class="btn btn-cus" data-toggle="modal" data-target="#myModal">募資</button>　聯博-全球債券基金AT級別美元(基金之配息來源可能為本金)
+                                                <button class="btn btn-cus" data-toggle="modal" data-target="#myModal">投資</button>　聯博-全球債券基金AT級別美元(基金之配息來源可能為本金)
                                                 <i id="secondDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
                                                 <div id="secondName" style="display: none;">
                                                     <br>風險等級：RR2
                                                     <br>基金介紹：本基金投資於全球政府及企業在已開發市場所發行的投資級固定收益證券，以取得高額之總投資報酬。本基金持有的非美元計價債券，大部分均以美元避險，從而將匯率波動風險減至最低。投資經理善用其內部的信用分析資源，外部的財務及經濟資訊來評量固定收益證券的投資價值。
+                                                    <br>截止日期：2019/1/31
+                                                    <br>投資門檻金額：$5,500
                                                 </div>
                                             </td>
                                             <td>
@@ -68,11 +70,13 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <button class="btn btn-cus" data-toggle="modal" data-target="#myModal">募資</button>　野村全球短期收益基金-新臺幣計價
+                                                <button class="btn btn-cus" data-toggle="modal" data-target="#myModal">投資</button>　野村全球短期收益基金-新臺幣計價
                                                 <i id="thirdDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
                                                 <div id="thirdName" style="display: none;">
                                                     <br>風險等級：RR2
                                                     <br>基金介紹：以相對穩健的投資方式參與全球市場經濟成長:本基金的主要投資區域為全球市場，由於已開發國家與新興國家的經濟成長不一，全球央行貨幣政策亦有所分歧，本基金以價格波動相對較低的全球投資等級短期債券為主要投資標的，分散投資已開發國家與新興國家債券以提升投資組合安全性，故在追求收益的同時將控制風險，以相對穩健的投資方式參與全球債券市場的獲利機會。
+                                                    <br>截止日期：2018/12/11
+                                                    <br>投資門檻金額：$5,000
                                                 </div>
                                             </td>
                                             <td>
@@ -96,7 +100,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="modal-title" id="myModalLabel">募資金額</div>
+                <div class="modal-title" id="myModalLabel">投資金額</div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -104,10 +108,11 @@
             <div class="modal-body">
                 <div>請輸入欲投資的金額</div>
                 <input id="investMoney" type="text">
+                <div id="plzInput" style="display: none;color: rgba(255,0,0,0.8);font-size: 2vmin;">請輸入有效值</div>
             </div>
             <div class="modal-footer">
                 <div id="pageNum" style="position: absolute; left:50%"></div>
-                <button type="button" class="btn btn btn-info" id="handIn" data-dismiss="modal">提交</button>
+                <button type="button" class="btn btn btn-info" id="handIn">提交</button>
                 <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button> -->
             </div>
         </div>

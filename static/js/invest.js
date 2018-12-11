@@ -106,8 +106,12 @@ $(document).ready(function () {
     $('.btn-cus').click(function () {
         $thisBtn = $(this);
         $('#handIn').click(function () {
+            if($('#investMoney').val() == '' || isNaN(parseInt($('#investMoney').val())) == true){
+                $('#plzInput').css('display','block');
+            }else{
             var tmpStr = $thisBtn.closest('td').next().text();
             var tmpArr = tmpStr.split(' ');
+            $('#handIn').attr('data-dismiss','modal');
             for (var i = 0; i < tmpArr.length; i++) {
                 if (tmpArr[i] != "" && tmpArr[i] != "\n") {
                     var process = tmpArr[i].split('　　');
@@ -117,6 +121,7 @@ $(document).ready(function () {
                     changeProgress(plusPercent, plusMoney.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","), $thisBtn.closest('td').next().find('.progress-bar'));
                 }
             }
+        }
         });
     })
 

@@ -6,6 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/assessment.js') }}"></script>
 
+
 <section class="xop-container">
     <div class="xop-left text-position">
         <article>
@@ -32,9 +33,10 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body" id="questionContent"></div>
+            <div class="modal-body" style="height: 55vh;" id="questionContent"></div>
             <div class="modal-footer">
                 <div id="pageNum" style="position: absolute; left:50%"></div>
+                <button type="button" class="btn btn btn-cus" id="skip">Admin</button>
                 <button type="button" class="btn btn btn-info" id="nextQuestion">Next</button>
                 <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button> -->
             </div>

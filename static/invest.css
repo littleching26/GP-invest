@@ -499,3 +499,29 @@ background-color: #212529; }
     background-color: rgba(255, 255, 255, 0.05); }
 .table-dark.table-hover tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.075); }
+
+.btn-cus {
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 10%;
+    font-size: 2vmin;
+    padding: 0.2rem 0.2rem;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.btn-cus:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+}
+.modal-title{
+    font-size: 3.5vmin;
+    margin-left: auto;
+    /* line-height: 3vmin; */
+}
+#myModal {
+    width: 30%;
+    text-align: center;
+    margin-left: 35%;
+}

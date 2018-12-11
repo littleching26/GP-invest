@@ -52,7 +52,7 @@
             var slideLayer = $("[data-animation]");
             slideLayer.each(function () {
                 var anim_name = $(this).data('animation');
-                $(this).removeClass('animated ' + anim_name).css('opacity', '0');
+                $(this).Class('animated ' + anim_name).css('opacity', '0');
             });
         });
 

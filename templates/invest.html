@@ -39,7 +39,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                富達基金-全球債券基金(A類股份-美元)
+                                                <button class="btn btn-cus"  data-toggle="modal" data-target="#myModal">募資</button>　富達基金-全球債券基金(A類股份-美元)
                                                 <i id="firstDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
                                                 <div id="firstName" style="display: none;">
                                                     <br>風險等級：RR2
@@ -47,13 +47,13 @@
                                             </td>
                                             <td>
                                                 <div class="progress">
-                                                    <div class="progress-bar bg-success" id="firstProfolio"></div>
+                                                    <div class="progress-bar" id="firstProfolio"></div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                聯博-全球債券基金AT級別美元(基金之配息來源可能為本金)
+                                                <button class="btn btn-cus" data-toggle="modal" data-target="#myModal">募資</button>　聯博-全球債券基金AT級別美元(基金之配息來源可能為本金)
                                                 <i id="secondDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
                                                 <div id="secondName" style="display: none;">
                                                     <br>風險等級：RR2
@@ -62,13 +62,13 @@
                                             </td>
                                             <td>
                                                 <div class="progress">
-                                                    <div class="progress-bar bg-warning" id="secondProfolio"></div>
+                                                    <div class="progress-bar" id="secondProfolio"></div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                野村全球短期收益基金-新臺幣計價
+                                                <button class="btn btn-cus" data-toggle="modal" data-target="#myModal">募資</button>　野村全球短期收益基金-新臺幣計價
                                                 <i id="thirdDetail" style="float: right;font-size: 1.8vmin;" class="fas fa-search-plus"></i>
                                                 <div id="thirdName" style="display: none;">
                                                     <br>風險等級：RR2
@@ -77,7 +77,7 @@
                                             </td>
                                             <td>
                                                 <div class="progress">
-                                                    <div class="progress-bar bg-primary" id="thirdProfolio"></div>
+                                                    <div class="progress-bar" id="thirdProfolio"></div>
                                                 </div>
                                             </td>
                                         </tr>
@@ -92,5 +92,26 @@
     </div>
 </div>
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" \ aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="myModalLabel">募資金額</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>請輸入欲投資的金額</div>
+                <input id="investMoney" type="text">
+            </div>
+            <div class="modal-footer">
+                <div id="pageNum" style="position: absolute; left:50%"></div>
+                <button type="button" class="btn btn btn-info" id="handIn" data-dismiss="modal">提交</button>
+                <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button> -->
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

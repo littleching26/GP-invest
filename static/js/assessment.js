@@ -16,8 +16,18 @@ $(document).ready(function () {
         C_num = 0;
         D_num = 0;
         $('#questionContent').html('');
+        $('#part').text('Part I 人格測試');
     });
-
+    
+    $('#skip').click(function(){
+        for(var i =1;i<6;i++){
+            $("#rb-" + i).find("[data-value='A']").addClass('rb-tab-active');
+        }
+        setTimeout(function() {
+            window.location.href = 'invest';
+           }, 500);
+        
+    });
 
     $("#nextQuestion").click(function () {
         countABCD();
@@ -97,7 +107,6 @@ function personalityType(A_num, B_num, C_num, D_num) {
     return type;
 }
 function detectFormClick() {
-
     $(".rb-tab").click(function () {
         if ($(this).attr("data-value") != undefined) {
             $(this).parent().find(".rb-tab").removeClass("rb-tab-active");
@@ -126,7 +135,7 @@ function fieldFormHtml(questionArr) {
             var strArr = questionArr[i];
             console.log(strArr);
             tmpArr = strArr.split(' ');
-            formHtml += '<div id="rb-' + (i + 1).toString() + '"class="rb"><div class="rb-tab">\
+            formHtml += '<div id="rb-' + (i + 1).toString() + '"class="rb" style="margin-top: 1vh;"><div class="rb-tab">\
             <div class="rb-spot" style="margin-left:35%;"><div>'+ (i + 1).toString() + '</div></div></div><div class="rb-tab" data-value="A">\
             <div class="rb-spot"><div>'+ tmpArr[0] + '</div></div></div><div class="rb-tab" data-value="B">\
             <div class="rb-spot"><div>'+ tmpArr[1] + '</div></div></div><div class="rb-tab" data-value="C">\
@@ -140,12 +149,12 @@ function fieldFormHtml(questionArr) {
         var tmpArr = new Array();
         var strArr = questionArr[(count - 25)];
         tmpArr = strArr.split(' ');
-        formHtml += '<div id="rb-' + count.toString() + '><div class="qtitle">' + (count - 24).toString() + '　　' + tmpArr[0] + '</div><br>\
-            <div class="partIIcontent"data-value="A">'+ tmpArr[1] + '</div><br>\
-            <div class="partIIcontent" data-value="B">'+ tmpArr[2] + '</div><br>\
-            <div class="partIIcontent" data-value="C">'+ tmpArr[3] + '</div><br>\
-            <div class="partIIcontent" data-value="D">'+ tmpArr[4] + '</div><br>\
-            <div class="partIIcontent" data-value="E">'+ tmpArr[5] + '</div><br></div>';
+        formHtml += '<div id="rb-' + count.toString() + '"style="margin-top: 4vh;"><div class="qtitle">' + (count - 24).toString() + '　　' + tmpArr[0] + '</div><br>\
+            <div class="partIIcontent" data-value="A" style="margin-top: 2vh;">'+ tmpArr[1] + '</div><br>\
+            <div class="partIIcontent" data-value="B" style="margin-top: 2vh;">'+ tmpArr[2] + '</div><br>\
+            <div class="partIIcontent" data-value="C" style="margin-top: 2vh;">'+ tmpArr[3] + '</div><br>\
+            <div class="partIIcontent" data-value="D" style="margin-top: 2vh;">'+ tmpArr[4] + '</div><br>\
+            <div class="partIIcontent" data-value="E" style="margin-top: 2vh;">'+ tmpArr[5] + '</div><br></div>';
         count++;
         $('#pageNum').text(pageNum + '/12');
         $('#nextQuestion').text('Next');

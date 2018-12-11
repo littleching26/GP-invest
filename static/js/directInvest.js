@@ -49,6 +49,17 @@ $(document).ready(function () {
         var widthProgress = $('.progress').width();
         var progressBarWidth = percent * widthProgress / 100;
         var revenue = percent * 25000;
+        if(percent>=200){
+            $element.addClass('bg-info');
+        }else if(percent >= 150 && percent < 200){
+            $element.addClass('bg-danger');
+        }else if(percent >= 100 && percent < 150){
+            $element.addClass('bg-warning');
+        }else if(percent >= 50 && percent < 100){
+            $element.addClass('bg-primary');
+        }else{
+            $element.addClass('bg-success');
+        }
         var revenueDigital = revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         $element.animate({ width: progressBarWidth }, 1100).html("$" + revenueDigital + "　　" 　+ percent + "%");
     }
@@ -57,10 +68,55 @@ $(document).ready(function () {
     progress(45, $('#thirdProfolio'));
     progress(120, $('#fourthProfolio'));
     progress(200, $('#fifthProfolio'));
-    progress(32, $('#sixthProfolio'));
+    progress(168, $('#sixthProfolio'));
     progress(7, $('#seventhProfolio'));
-    progress(19, $('#eighthProfolio'));
+    progress(57, $('#eighthProfolio'));
     progress(25, $('#ninthProfolio'));
+
+    $('#myModal').on('hidden.bs.modal', function () {
+        $('#investMoney').val('');
+    });
+    function changeProgress(percent, money, $element) {
+        $element.animate({ width: 0 }).html("");
+        var widthProgress = $('.progress').width();
+        var progressBarWidth = percent * widthProgress / 100;
+        $element.removeClass($element[0].className.split(' ')[1]);
+        setTimeout(function () {
+            $element.animate({ width: progressBarWidth }, 0).html("$" + money + "　　" + percent + "%");
+            if(percent>=200){
+                $element.addClass('bg-info');
+            }else if(percent >= 150 && percent < 200){
+                $element.addClass('bg-danger');
+            }else if(percent >= 100 && percent < 150){
+                $element.addClass('bg-warning');
+            }else if(percent >= 50 && percent < 100){
+                $element.addClass('bg-primary');
+            }else{
+                $element.addClass('bg-success');
+            }
+        }, 1000);
+    }
+    var $thisBtn = ""
+    $('.btn-cus').click(function () {
+        $thisBtn = $(this);
+        $('#handIn').click(function () {
+            var tmpStr = $thisBtn.closest('td').next().text();
+            var tmpArr = tmpStr.split(' ');
+            for (var i = 0; i < tmpArr.length; i++) {
+                if (tmpArr[i] != "" && tmpArr[i] != "\n") {
+                    var process = tmpArr[i].split('　　');
+                    var percentMoney = parseInt(process[0].replace(/,/g, '').replace('$', '')) / parseInt(process[1].replace('%', ''));
+                    var plusPercent = parseInt($('#investMoney').val()) / percentMoney + parseInt(process[1].replace('%', ''));
+                    var plusMoney = parseInt(process[0].replace(/,/g, '').replace('$', '')) + parseInt($('#investMoney').val())
+                    changeProgress(plusPercent, plusMoney.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","), $thisBtn.closest('td').next().find('.progress-bar'));
+                }
+            }
+        });
+    })
+
+
+
+
 });
 
 

@@ -1,4 +1,4 @@
-$(document).ready(function () {   
+$(document).ready(function () {
     $('#firstDetail').click(function () {
         if ($('#firstDetail').attr('class') == 'fas fa-search-plus') {
             $('#firstName').fadeIn("slow", function () {
@@ -57,21 +57,22 @@ $(document).ready(function () {
 
     $('#myModal').on('hidden.bs.modal', function () {
         $('#investMoney').val('');
+        $('#plzInput').css('display', 'none');
     });
 
     function progress(percent, $element) {
         var widthProgress = $('.progress').width();
         var progressBarWidth = percent * widthProgress / 100;
         var revenue = percent * 25000;
-        if(percent>=200){
+        if (percent >= 200) {
             $element.addClass('bg-info');
-        }else if(percent >= 150 && percent < 200){
+        } else if (percent >= 150 && percent < 200) {
             $element.addClass('bg-danger');
-        }else if(percent >= 100 && percent < 150){
+        } else if (percent >= 100 && percent < 150) {
             $element.addClass('bg-warning');
-        }else if(percent >= 50 && percent < 100){
+        } else if (percent >= 50 && percent < 100) {
             $element.addClass('bg-primary');
-        }else{
+        } else {
             $element.addClass('bg-success');
         }
         var revenueDigital = revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -88,15 +89,15 @@ $(document).ready(function () {
         $element.removeClass($element[0].className.split(' ')[1]);
         setTimeout(function () {
             $element.animate({ width: progressBarWidth }, 0).html("$" + money + "　　" + percent + "%");
-            if(percent>=200){
+            if (percent >= 200) {
                 $element.addClass('bg-info');
-            }else if(percent >= 150 && percent < 200){
+            } else if (percent >= 150 && percent < 200) {
                 $element.addClass('bg-danger');
-            }else if(percent >= 100 && percent < 150){
+            } else if (percent >= 100 && percent < 150) {
                 $element.addClass('bg-warning');
-            }else if(percent >= 50 && percent < 100){
+            } else if (percent >= 50 && percent < 100) {
                 $element.addClass('bg-primary');
-            }else{
+            } else {
                 $element.addClass('bg-success');
             }
         }, 1000);
@@ -106,22 +107,22 @@ $(document).ready(function () {
     $('.btn-cus').click(function () {
         $thisBtn = $(this);
         $('#handIn').click(function () {
-            if($('#investMoney').val() == '' || isNaN(parseInt($('#investMoney').val())) == true){
-                $('#plzInput').css('display','block');
-            }else{
-            var tmpStr = $thisBtn.closest('td').next().text();
-            var tmpArr = tmpStr.split(' ');
-            $('#handIn').attr('data-dismiss','modal');
-            for (var i = 0; i < tmpArr.length; i++) {
-                if (tmpArr[i] != "" && tmpArr[i] != "\n") {
-                    var process = tmpArr[i].split('　　');
-                    var percentMoney = parseInt(process[0].replace(/,/g, '').replace('$', '')) / parseInt(process[1].replace('%', ''));
-                    var plusPercent = parseInt($('#investMoney').val()) / percentMoney + parseInt(process[1].replace('%', ''));
-                    var plusMoney = parseInt(process[0].replace(/,/g, '').replace('$', '')) + parseInt($('#investMoney').val())
-                    changeProgress(plusPercent, plusMoney.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","), $thisBtn.closest('td').next().find('.progress-bar'));
+            if ($('#investMoney').val() == '' || isNaN(parseInt($('#investMoney').val())) == true) {
+                $('#plzInput').css('display', 'block');
+            } else {
+                var tmpStr = $thisBtn.closest('td').next().text();
+                var tmpArr = tmpStr.split(' ');
+                $('#handIn').attr('data-dismiss', 'modal');
+                for (var i = 0; i < tmpArr.length; i++) {
+                    if (tmpArr[i] != "" && tmpArr[i] != "\n") {
+                        var process = tmpArr[i].split('　　');
+                        var percentMoney = parseInt(process[0].replace(/,/g, '').replace('$', '')) / parseInt(process[1].replace('%', ''));
+                        var plusPercent = parseInt($('#investMoney').val()) / percentMoney + parseInt(process[1].replace('%', ''));
+                        var plusMoney = parseInt(process[0].replace(/,/g, '').replace('$', '')) + parseInt($('#investMoney').val())
+                        changeProgress(plusPercent, plusMoney.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","), $thisBtn.closest('td').next().find('.progress-bar'));
+                    }
                 }
             }
-        }
         });
     })
 

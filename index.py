@@ -25,7 +25,13 @@ def login():
 
 @app.route('/history')
 def history():
-    return render_template("history.html")
+    uri = "mongodb://LICHING:justtheway402@ds225624.mlab.com:25624/gp_invest"
+    client = MongoClient(uri)
+    db = client['gp_invest']
+    collect = db['user_info']
+    investedProfolio = collect.find_one({'user':'Admin'})
+    history = investedProfolio['history']
+    return render_template("history.html",history=history)
 
 @app.route('/directInvest')
 def directInvest():

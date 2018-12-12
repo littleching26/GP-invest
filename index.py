@@ -32,7 +32,8 @@ def history():
     investedProfolio = collect.find_one({'user':'Admin'})
     try:
         history = investedProfolio['history']
-        return render_template("history.html",history=history)
+        jsonHistory = json.dumps(history)
+        return render_template("history.html",history=jsonHistory)
     except:
         return render_template("history.html",history=[])
 

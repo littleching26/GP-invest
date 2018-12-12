@@ -30,8 +30,11 @@ def history():
     db = client['gp_invest']
     collect = db['user_info']
     investedProfolio = collect.find_one({'user':'Admin'})
-    history = investedProfolio['history']
-    return render_template("history.html",history=history)
+    try:
+        history = investedProfolio['history']
+        return render_template("history.html",history=history)
+    except:
+        return render_template("history.html",history=[])
 
 @app.route('/directInvest')
 def directInvest():

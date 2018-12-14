@@ -80,5 +80,14 @@ def get_javascript_data(jsdata):
     return jsdata
 
 
+@app.route('/removeData')
+def removeData():
+    uri = "mongodb://LICHING:justtheway402@ds225624.mlab.com:25624/gp_invest"
+    client = MongoClient(uri)
+    db = client['gp_invest']
+    collect = db['user_info']
+    collect.update({'user': 'Admin' }, { '$unset' : { 'history' : 1} })
+    return 'finish'
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -286,10 +286,11 @@ td{
             }
         /* Bootstrap Progress */
     .progress {
-        
         border-radius: 3px;
         height: 4vmin;     }
         .progress .progress-bar {
+            color: #ffffff;
+            font-weight: 500;
             font-size: 3vmin;
         border-radius: 3px; }
         .progress.progress-sm {

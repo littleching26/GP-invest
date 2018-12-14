@@ -104,7 +104,8 @@ $(document).ready(function () {
             if ($('#investMoney').val() == '' || isNaN(parseInt($('#investMoney').val())) == true) {
                 $('#plzInput').css('display', 'block');
             } else {
-                var investProfolio = $thisBtn.closest('div').find('.profolio_name').text()
+                var investProfolio = $thisBtn.closest('div').next().next().text();
+                console.log(investProfolio);
                 $.get( "/getmethod/"+ investProfolio);
                 var tmpStr = $thisBtn.closest('td').next().text();
                 var tmpArr = tmpStr.split(' ');

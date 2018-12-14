@@ -25,7 +25,17 @@ def login():
 
 @app.route('/history')
 def history():
-    return render_template("history.html")
+    uri = "mongodb://LICHING:justtheway402@ds225624.mlab.com:25624/gp_invest"
+    client = MongoClient(uri)
+    db = client['gp_invest']
+    collect = db['user_info']
+    investedProfolio = collect.find_one({'user':'Admin'})
+    try:
+        history = investedProfolio['history']
+        jsonHistory = json.dumps(history)
+        return render_template("history.html",history=jsonHistory)
+    except:
+        return render_template("history.html",history=[])
 
 @app.route('/directInvest')
 def directInvest():
@@ -34,18 +44,41 @@ def directInvest():
 # def logined_main_page(email):
 #     return render_template("index.html",email=email)
 
-@app.route('/get_user/<email>')
-def get_user(email):
+@app.route('/getmethod/<jsdata>')
+def get_javascript_data(jsdata):
+    needInsert = 0
     uri = "mongodb://LICHING:justtheway402@ds225624.mlab.com:25624/gp_invest"
     client = MongoClient(uri)
     db = client['gp_invest']
     collect = db['user_info']
-    registered = collect.find_one({'email':email})
-    if (registered == None) :
-        collect.insert_one({'email':email})
-        return 'inserted'
-    else:
-        return 'existed'
+    userInfo = collect.find_one({'user':'Admin'})
+    try:
+        originArr = userInfo['history']
+        for i in range(0,len(originArr)):
+            if(originArr[i] == jsdata):
+                needInsert = 1
+        if(needInsert == 0):
+            originArr.append(jsdata)
+            collect.update_one({
+                'user':'Admin'
+            },{
+                '$set':{
+                    'history':originArr
+                }
+            },upsert=False)
+    except:
+        originArr = []
+        originArr.append(jsdata)
+        collect.update_one({
+            'user':'Admin'
+        },{
+            '$set':{
+                'history':originArr
+            }
+        },upsert=False)
+    
+    return jsdata
+
 
 if __name__ == "__main__":
     app.run(debug=True)

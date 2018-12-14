@@ -1695,7 +1695,6 @@ img {
     .Conceptshow {
         color: #FAF0E6;
         font-size: 7vmin ;
-        border-right: solid 1px #FAF0E6 ;
         -webkit-animation: 2s ease 0s normal forwards 1 fadein;
         animation: 2s ease 0s normal forwards 1 fadein;
     }

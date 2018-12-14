@@ -18,68 +18,7 @@
                             <div class="card-body">
                                 <div style="font-size: 3vmin;">目前尚未進行任何投資！</div><br>
                                 <div class="table-responsive">
-                                    <table class="table table-dark">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    #
-                                                </th>
-                                                <th>
-                                                    投資組合
-                                                </th>
-                                                <th>
-                                                    收益總和
-                                                </th>
-                                                <th>
-                                                    投資時間
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>
-
-                                                </td>
-                                                <td>
-                                                    $ 0.00
-                                                </td>
-                                                <td>
-                                                    
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    2
-                                                </td>
-                                                <td>
-
-                                                </td>
-                                                <td>
-                                                    $ 0.00
-                                                </td>
-                                                <td>
-                                                    
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    3
-                                                </td>
-                                                <td>
-
-                                                </td>
-                                                <td>
-                                                    $ 0.00
-                                                </td>
-                                                <td>
-                                                    
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
+                                    <table class="table table-dark" id="historyInvest" style="table-layout: fixed;">
                                     </table>
                                 </div>
                             </div>
@@ -92,27 +31,38 @@
 </div>
 
 <script>
-    $('.bannerWord').css('color','black');
-    $('.bannerWord').css('background-color','transparent');
-    $('.classy-menu').css('background-color','transparent');
-    $('#loginBtn').css('color','black');
-    $('#brandLogo').attr("src","../static/img/core-img/logo_black.png");
-    $(window).scroll(function () {
-        var scrollTop = $(this).scrollTop();
-        if (scrollTop <= 0) {
-            console.log('test');
-            $('.bannerWord').css('color','black');
-            $('#loginBtn').css('color','black');
-            $('#brandLogo').attr("src","../static/img/core-img/logo_black.png");
-            $('.bannerWord').css('background-color','transparent');
-            $('.classy-menu').css('background-color','transparent');
-        } else {
-            $('.bannerWord').css('color','#ffffff');
-            $('#loginBtn').css('color','#ffffff');
-            $('#brandLogo').attr('src',"../static/img/core-img/logo.png");
-            $('.bannerWord').css('background-color','black');
-            $('.classy-menu').css('background-color','black');
+    var history_invest = {{history|safe}};
+    console.log(history_invest);
+    $(document).ready(function(){
+        $('.bannerWord').css('color','black');
+        $('.bannerWord').css('background-color','transparent');
+        $('.classy-menu').css('background-color','transparent');
+        $('#loginBtn').css('color','black');
+        $('#brandLogo').attr("src","../static/img/core-img/logo_black.png");
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+            if (scrollTop <= 0) {
+                console.log('test');
+                $('.bannerWord').css('color','black');
+                $('#loginBtn').css('color','black');
+                $('#brandLogo').attr("src","../static/img/core-img/logo_black.png");
+                $('.bannerWord').css('background-color','transparent');
+                $('.classy-menu').css('background-color','transparent');
+            } else {
+                $('.bannerWord').css('color','#ffffff');
+                $('#loginBtn').css('color','#ffffff');
+                $('#brandLogo').attr('src',"../static/img/core-img/logo.png");
+                $('.bannerWord').css('background-color','black');
+                $('.classy-menu').css('background-color','black');
+            }
+        });
+        var str_tbody = '<thead><tr><th>#</th><th>投資組合</th><th>收益總和</th><th>投資時間</th></tr></thead><tbody>'
+        for(var i =0;i<history_invest.length;i++){
+            str_tbody += '<tr><td>'+(i+1).toString()+'</td><td>'+ history_invest[i] +'</td><td>$ 0.00</td><td></td></tr>'
         }
-    });
+        str_tbody += '</tbody>'
+        $('#historyInvest').html(str_tbody);
+    })
+    
 </script>
 {% endblock %}

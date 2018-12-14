@@ -318,8 +318,14 @@
     border: 2px solid rgba(243,49,128,.6);
   }
   .qtitle{
-    text-align: left;
+    text-align: center;
   }
+
+  .btn-cus {
+    color:#fff;
+    background-color:#fff;
+    border-color: #fff; 
+    }
 
   .partIIcontent {
       cursor: pointer;
